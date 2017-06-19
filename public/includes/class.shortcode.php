@@ -46,7 +46,7 @@ class wpSearchShortcode{
 
 		do_action('wpls_before'); // action ?>
 
-		<div id="wpls" class="wpls <?php echo esc_attr( $mode );?> <?php echo esc_attr( $collapse );?> <?php echo esc_attr( $results_style );?> " itemprop="potentialAction" itemscope itemtype="http://schema.org/SearchAction" <?php echo self::build_local_atts( $atts );?> >
+		<div id="wpls" class="wpls <?php echo esc_attr( $mode );?> <?php echo esc_attr( $collapse );?> <?php echo esc_attr( $results_style );?> " <?php echo self::build_local_atts( $atts );?> >
 
 			<?php do_action('wpls_inside_top'); // action ?>
 
@@ -65,13 +65,13 @@ class wpSearchShortcode{
 
 				<?php do_action('wpls_inside_input'); // action ?>
 
-				<input itemprop="query-input" type="text" data-object-type="<?php echo esc_attr( $type );?>" id="wpls--input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>">
+				<input type="text" data-object-type="<?php echo esc_attr( $type );?>" id="wpls--input" placeholder="<?php echo esc_attr( $atts['placeholder'] );?>">
 				<div id="wpls--loading" class="wpls--loading"><div class="wpls--loader"></div></div>
 
 			</div>
 
 			<?php if ( !$atts['target'] ) { ?>
-			<ul itemprop="target" id="wpls--post-list"></ul>
+			<ul id="wpls--post-list"></ul>
 			<?php } ?>
 
 			<?php do_action('wpls_inside_bottom'); // action ?>
